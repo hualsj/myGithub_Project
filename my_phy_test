@@ -1,0 +1,33 @@
+import time
+
+start_time = time.perf_counter()
+
+s = ""
+
+for n in range(0 ,100000):
+    s += str(n)
+
+end_time = time.perf_counter()
+
+print("10W +=Time:{}".format(end_time - start_time))
+
+start_time = time.perf_counter()
+
+e = []
+
+for n in range(0 ,100000):
+    e.append(str(n))
+
+e =''.join(e)
+
+end_time = time.perf_counter()
+
+print("10W join Time:{}".format(end_time - start_time))
+
+start_time = time.perf_counter()
+
+f = ''.join(map(str,range(0,100000)))
+
+end_time = time.perf_counter()
+
+print("10W map join Time:{}".format(end_time - start_time))
